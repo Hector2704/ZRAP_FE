@@ -1,0 +1,24 @@
+# yaml-language-server: $schema=https://sap.github.io/ui5-tooling/schema/ui5.yaml.json
+
+specVersion: '2.4'
+metadata:
+  name: 'rap_fe'
+type: application
+builder:
+  resources:
+    excludes:
+      - /test/**
+      - /localService/**
+  customTasks:
+    - name: deploy-to-abap
+      afterTask: generateCachebusterInfo
+      configuration:
+        target:
+          destination: abap-cloud-adt-e0ab2c76trial-dev
+          url: https://45f514af-f57b-4579-990b-8b70ea328491.abap.us10.hana.ondemand.com
+          scp: true
+        app:
+          name: ZRAP_FE
+          description: Deploy
+          package: ZLEARN_PACKAGE
+          transport: TRLK905701
