@@ -125,7 +125,12 @@
             }
         },
         "extends": {
-            "extensions": {}
+            "extensions": {
+                "sap.ui.viewExtensions": {
+                    "sap.suite.ui.generic.template.ListReport.view.ListReport": {},
+                    "sap.suite.ui.generic.template.ObjectPage.view.Details": {}
+                }
+            }
         },
         "contentDensities": {
             "compact": true,
@@ -138,7 +143,11 @@
             "forceGlobalRefresh": false,
             "objectPageHeaderType": "Dynamic",
             "considerAnalyticalParameters": true,
-            "showDraftToggle": false
+            "showDraftToggle": false,
+            "flexibleColumnLayout": {
+                "defaultTwoColumnLayoutType": "TwoColumnsMidExpanded",
+                "defaultThreeColumnLayoutType": "ThreeColumnsMidExpanded"
+            }
         },
         "pages": {
             "ListReport|Travel": {
